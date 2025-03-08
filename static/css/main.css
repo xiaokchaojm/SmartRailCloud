@@ -1,0 +1,195 @@
+/* static/css/main.css - Main styles for SmartRailCloud */
+
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+/* Navbar customization */
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Card styling */
+.card {
+    margin-bottom: 1.5rem;
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 600;
+}
+
+/* Stat cards */
+.stat-card {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-card h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.stat-card h5 {
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+/* Chart containers */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Simulation view */
+.simulation-view {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1.5rem;
+}
+
+#line-visualization {
+    height: 200px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.station-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: all 0.3s;
+}
+
+.station-marker:hover {
+    background-color: #007bff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25);
+}
+
+.train-marker {
+    position: absolute;
+    width: 30px;
+    height: 12px;
+    background-color: #28a745;
+    border-radius: 3px;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    transition: left 0.5s linear, top 0.5s linear;
+}
+
+.train-marker.delayed {
+    background-color: #ffc107;
+}
+
+.track-line {
+    position: absolute;
+    background-color: #adb5bd;
+    height: 4px;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+/* Optimization styles */
+.optimization-view {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    margin-bottom: 1.5rem;
+}
+
+.optimization-status {
+    padding: 0.5rem 0;
+}
+
+/* Report styles */
+.report-section {
+    padding: 1rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.report-section:last-child {
+    border-bottom: none;
+}
+
+/* Form styling */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        height: 200px;
+    }
+    
+    #line-visualization {
+        height: 150px;
+    }
+}
+
+/* Animation for spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #007bff;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+/* Custom tooltip styles */
+.custom-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    max-width: 200px;
+}
